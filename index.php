@@ -51,6 +51,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 			</ul>
 
+			<?php //wp_pagenavi(); ?>
 			<?php doughnut_content_nav( 'nav-below' ); ?>
 
 		<?php else : ?>

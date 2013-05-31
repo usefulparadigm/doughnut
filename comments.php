@@ -39,7 +39,7 @@ if ( post_password_required() )
 		</nav><!-- #comment-nav-above -->
 		<?php endif; // check for comment navigation ?>
 
-		<ol class="comment-list">
+		<ol class="comment-list d_list type_article">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
 				 * to use doughnut_comment() to format the comments.

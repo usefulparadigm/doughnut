@@ -1,5 +1,7 @@
-_s
+Doughnut: A WordPress Theme based on Daum Daugh CSS Library
 ===
+
+Doughnut은 다음 커뮤니케이션즈에서 공개한 오픈소스 CSS Library인 [Dough](http://dough.daum.net/)에 기반한 워드프레스 테마입니다. 
 
 Hi. I'm a starter theme called `_s`, or `underscores`, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
 
@@ -45,6 +47,7 @@ Good luck!
 TODOs
 -----
 
-* Support Custom Pagination Plugins (like WP-PageNavi, WP-Paginate)
 * Add Theme Customizing Menu to Admin Dashboard
 * Add Featured Post
+* Applying Responsible Design
+* Styling Comments

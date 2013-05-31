@@ -39,7 +39,7 @@ function doughnut_setup() {
 	 *
 	 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 	 */
-	//add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'post-thumbnails' );
 
 	/**
 	 * This theme uses wp_nav_menu() in one location.
@@ -96,8 +96,8 @@ function doughnut_widgets_init() {
 		'id'            => 'sidebar-1',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
-		'before_title'  => '<h3 class="widget-title">',
-		'after_title'   => '</h3>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'doughnut_widgets_init' );
@@ -151,7 +151,6 @@ require get_template_directory() . '/inc/jetpack.php';
  * Additional functions
  */
 
-add_theme_support( 'post-thumbnails' ); 
 
 /**
  * replace current_page_item class in menu
@@ -180,4 +179,8 @@ function posts_link_attributes() {
     return 'class="link_edge"';
 }
 
-
+// add_filter( 'get_avatar', 'doughnut_get_avatar_filter', 10, 5);
+// 
+// function doughnut_get_avatar_filter($avatar, $id_or_email, $size, $default, $alt) {
+// 	return "<img alt='{$safe_alt}' src='{$default}' class='avatar avatar-{$size} photo avatar-default f_l' height='{$size}' width='{$size}' />";
+// }

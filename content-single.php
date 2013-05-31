@@ -8,10 +8,12 @@
 	<header class="entry-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 
-		<div class="entry-meta">
+		<div class="entry-meta align_right">
 			<?php doughnut_posted_on(); ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
+
+	<span class="line_break"></span>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

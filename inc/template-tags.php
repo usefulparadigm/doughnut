@@ -27,7 +27,8 @@ function doughnut_content_nav( $nav_id ) {
 	if ( $wp_query->max_num_pages < 2 && ( is_home() || is_archive() || is_search() ) )
 		return;
 
-	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging group_paging';
+	$nav_class = ( is_single() ) ? 'navigation-post' : 'navigation-paging';
+	$nav_class = $nav_class.' group_paging';
 
 	?>
 	<nav role="navigation" id="<?php echo esc_attr( $nav_id ); ?>" class="<?php echo $nav_class; ?>">
@@ -35,17 +36,17 @@ function doughnut_content_nav( $nav_id ) {
 
 	<?php if ( is_single() ) : // navigation links for single posts ?>
 
-		<?php previous_post_link( '<div class="nav-previous">%link</div>', '<span class="meta-nav">' . _x( '&larr;', 'Previous post link', 'dough' ) . '</span> %title' ); ?>
-		<?php next_post_link( '<div class="nav-next">%link</div>', '%title <span class="meta-nav">' . _x( '&rarr;', 'Next post link', 'dough' ) . '</span>' ); ?>
+		<?php previous_post_link( '%link', _x( '&larr;', 'Previous post link', 'dough' ) . ' %title' ); ?>
+		<?php next_post_link( '%link', '%title ' . _x( '&rarr;', 'Next post link', 'dough' ) ); ?>
 
 	<?php elseif ( $wp_query->max_num_pages > 1 && ( is_home() || is_archive() || is_search() ) ) : // navigation links for home, archive, and search pages ?>
 
 		<?php if ( get_next_posts_link() ) : ?>
-			<?php next_posts_link( __( '이전', 'dough' ) ); ?>
+			<?php next_posts_link( __( 'Prev', 'dough' ) ); ?>
 		<?php endif; ?>
 
 		<?php if ( get_previous_posts_link() ) : ?>
-			<?php previous_posts_link( __( '다음', 'dough' ) ); ?>
+			<?php previous_posts_link( __( 'Next', 'dough' ) ); ?>
 		<?php endif; ?>
 
 	<?php endif; ?>
@@ -75,7 +76,7 @@ function doughnut_comment( $comment, $args, $depth ) {
 
 	<li id="comment-<?php comment_ID(); ?>" <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?>>
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
-			<footer class="comment-meta">
+			<footer class="comment-meta d_wrap">
 				<div class="comment-author vcard">
 					<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'] ); ?>
 					<?php printf( __( '%s <span class="says">says:</span>', 'dough' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>

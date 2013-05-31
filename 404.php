@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area f_l grid_65">
 		<div id="content" class="site-content" role="main">
 
 			<article id="post-0" class="post not-found">
